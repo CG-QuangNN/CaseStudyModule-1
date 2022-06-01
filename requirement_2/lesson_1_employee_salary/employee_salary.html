@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const SEVEN_MILLION = 7000000;
+    const FIFTEEN_MILLION = 15000000;
+
+    let salary = parseFloat(prompt("Enter salary"));
+
+    let tax;
+    if (salary < SEVEN_MILLION) {
+        tax = salary * 0.05;
+    } else if (salary < FIFTEEN_MILLION) {
+        tax = salary * 0.1;
+    } else {
+        tax = salary * 0.2;
+    }
+
+    document.write('Tax: ' + tax.toLocaleString('vi'));
+    document.write('<br/>Net salary: ' + (salary - tax).toLocaleString('vi'));
+</script>
+</body>
+</html>

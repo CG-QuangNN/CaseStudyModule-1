@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+</head>
+<style>
+    #header {
+        text-align: center;
+    }
+
+    #wp-content {
+        display: flex;
+        width: 80%;
+        margin: 0px auto;
+        font-size: 30px;
+    }
+
+    #side-bar {
+        width: 30%;
+        border: 5px solid;
+    }
+
+    #content {
+        width: 70%;
+        border: 5px solid;
+        border-left: none;
+    }
+
+    li {
+        list-style-type: none;
+        padding: 10px 0px;
+    }
+
+    #frm {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+<div id="header">
+    <h1>Hệ thống quản lý bài tập Case study module 1</h1>
+</div>
+<div id="wp-content">
+    <div id="side-bar">
+        <ul>
+            <li>
+                <select id="requirement1">
+                    <option>Bài tập 1</option>
+                    <option value="/requirement_1/lesson_1_draw_empty_rectangle/lesson_1_draw_empty_rectangle.html">
+                        Draw empty rectangle
+                    </option>
+                    <option value="/requirement_1/lesson_2_draw_empty_isosceles_triangle/draw_empty_isosceles_triangle.html">
+                        Draw Empty Isosceles Triangle
+                    </option>
+                    <option value="/requirement_1/lesson_3_draw_isosceles_triangle/draw_isosceles_triangle.html">
+                        Draw Isosceles Triangle
+                    </option>
+                    <option value="/requirement_1/lesson_4_draw_empty_isosceles_triangle/draw_empty_isosceles_triangle.html">
+                        Draw Empty Isosceles Triangle
+                    </option>
+                </select>
+            </li>
+            <li>
+                <select id="requirement2">
+                    <option>Bài tập 2</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </li>
+            <li>
+                <select id="requirement3">
+                    <option>Bài tập 3</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </li>
+            <li>
+                <select id="requirement4">
+                    <option>Bài tập 4</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </li>
+            <li>
+                <select id="requirement5">
+                    <option>Bài tập 5</option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <iframe id="frm"></iframe>
+    </div>
+</div>
+<script>
+    $('#requirement1').on('change', function () {
+        document.getElementById('frm').src = $(this).val();
+    });
+</script>
+</body>
+</html>

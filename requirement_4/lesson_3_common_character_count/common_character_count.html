@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s1 = prompt('Enter string 1');
+    let s2 = prompt('Enter string 2');
+
+    alert('Common character count: ' + commonCharacterCount(s1, s2));
+
+    function commonCharacterCount(s1, s2) {
+        let ch;
+        let count = 0;
+        while (s1.length !== 0 && s2.length !== 0) {
+            let len1 = s1.length;
+            let len2 = s2.length;
+
+            ch = s1.charAt(0);
+            s1 = s1.replaceAll(ch, '');
+            s2 = s2.replaceAll(ch, '');
+
+            count += Math.min(len1 - s1.length, len2 - s2.length);
+        }
+
+        return count;
+    }
+</script>
+</body>
+</html>

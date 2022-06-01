@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(num) {
+        if (num < 2) {
+            return false;
+        } else {
+            for (let k = 2; k <= Math.sqrt(num); k++) {
+                if (num % k === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
+
+    function countPrime(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (isPrime(arr[i][j])) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    function filterPrime(arr) {
+        let array = [];
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (isPrime(arr[i][j])) {
+                    array.push(arr[i][j]);
+                }
+            }
+        }
+        return array;
+    }
+
+    let arr = [
+        [1, 2, 3, 5, 60, 44, 7, 3, 43, 326, 8, 4],
+        [12, 23, 2, -4, 0, 23, 321, 11, 1, 6]
+    ];
+
+
+    document.writeln(`Các số nguyên tố là: ${filterPrime(arr)}<br/>`);
+    document.writeln(`Tổng các số nguyên tố là: ${countPrime(arr)}`);
+</script>
+</body>
+</html>

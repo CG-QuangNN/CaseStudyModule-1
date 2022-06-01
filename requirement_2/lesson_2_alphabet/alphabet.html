@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // solution 1
+    const vowelList = ['o', 'u', 'i', 'a', 'e'];
+    let alphabet = prompt('Enter alphabet');
+
+    if (vowelList.includes(alphabet.toLowerCase())) {
+        alert('The alphabet is vowel');
+    } else {
+        alert('The alphabet is not vowel');
+    }
+
+    // solution 2
+    alphabet = prompt('Enter alphabet');
+    switch (alphabet.toLowerCase()) {
+        case 'o':
+        case 'u':
+        case 'i':
+        case 'a':
+        case 'e':
+            alert('The alphabet is vowel');
+            break
+        default:
+            alert('The alphabet is not vowel');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt('Enter input: ')
+    strNormalization = stringNormalization(str);
+    alert(`Trước khi chuẩn hóa: ${str}\nSau khi chuẩn hóa: ${strNormalization}\nTừ có độ dài lớn nhất: ${findMaxWord(strNormalization)}`)
+
+    function findMaxWord(target) {
+        let info = target.split(' ');
+        let maxWord = '';
+        for (let item of info) {
+            if (maxWord.length < item.length) {
+                maxWord = item;
+            }
+        }
+
+        return maxWord;
+    }
+
+    function stringNormalization(target) {
+        target = target.trim().toLowerCase().replace(/ +/g, ' ');
+        target = target.charAt(0).toUpperCase() + target.substring(1);
+        for (let i = 1; i < target.length; i++) {
+            if (target.charAt(i) === ' ') {
+                target = target.substring(0, i + 1) + target.charAt(i + 1).toUpperCase() + target.substring(i + 2);
+            }
+        }
+        return target;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let drinks = ['Cafe', 'Cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa', 'thoát gọi món'];
+    let prices = [20000, 60000, 40000, 30000, 10000, 60000]
+
+    let menu = "";
+    for (let i = 0; i < drinks.length; i++) {
+        menu += `${i + 1}. ${drinks[i]}\n`;
+    }
+
+    let choose;
+    let total = 0;
+    while (true) {
+        choose = parseInt(prompt(menu));
+
+        if (!Number.isInteger(choose) || choose < 0 || choose > 7) {
+            alert('Giá trị nhập vào không hợp lệ, xin hãy nhập lại');
+        } else if (choose === 7) {
+            alert('Tổng tiền: ' + total.toLocaleString('vi'));
+            break;
+        } else {
+            let count = parseFloat(prompt(`Bạn đang chọn sản phẩm ${drinks[choose - 1]} với giá ${prices[choose - 1].toLocaleString('vi')}\nMời bạn nhập vào số lượng: `))
+            total += count * prices[choose - 1];
+            alert(`Tổng tiền của món vừa gọi: ${(count * prices[choose - 1]).toLocaleString('vi')}\nTổng tiền tất cả: ${total.toLocaleString('vi')}`)
+        }
+    }
+</script>
+</body>
+</html>
